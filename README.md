@@ -3,6 +3,8 @@ stalker
 
 A jQuery plugin allowing elements to follow the user as they scroll a page.
 
+Here's a simple example: http://jsfiddle.net/mattwiller/s2Pgh/
+
 Usage
 -----
 
