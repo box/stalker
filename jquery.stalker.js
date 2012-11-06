@@ -28,11 +28,7 @@
  *      element while it is following the user.
  *    delay (integer - default: 0) -
  *      The delay, in milliseconds, before the element leaves its original position to
- *      follow the user.  Note: if animation is enabled, this will default to 300, as
- *      setting it too short looks bad
- *    animate (boolean - default: false) -
- *      Whether or not to animate the stalking element into position.  If set to true, the
- *      element will slide into its position at the edge of the page.
+ *      follow the user.
  *    startCallback (function - default: none) -
  *      A callback to be executed when the element begins following the user.  The function
  *      context will be the DOM element
@@ -63,7 +59,6 @@
 			,offset: 0
 			,stalkerStyle: {}
 			,delay: 0
-			,animate: false
 			,startCallback: null
 			,stopCallback: null
 		}
@@ -74,12 +69,6 @@
 	function Stalker( element, options )
 	{
 		this.element = element;
-
-		if (options && options.animate && options.delay == undefined)
-		{
-			// if animation is turned on without specifying a delay, set a sane one
-			options.delay = 300;
-		}
 
 		// jQuery has an extend method which merges the contents of two or
 		// more objects, storing the result in the first object. The first object
@@ -138,14 +127,7 @@
 					me.jElement.css(basicStalkerCSS).addClass(me.options.stalkerStyle);
 				}
 
-				if (me.options.animate)
-				{
-					me.jElement.before(me.placeholder).css(initial).animate(ending, 200);
-				}
-				else
-				{
-					me.jElement.before(me.placeholder).css(ending);
-				}
+				me.jElement.before(me.placeholder).css(ending);
 			};
 
 			if (me.options.delay)
