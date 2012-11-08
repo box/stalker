@@ -109,7 +109,7 @@
 		{
 			me.stalking = true;
 
-			var initial = {position: 'fixed'}, ending = $.extend({}, initial);
+			var initial = {position: 'fixed', left: me._baseOffset.left + 'px'}, ending = $.extend({}, initial);
 			initial[edge] = -(me.jElement.outerHeight()) + 'px';
 			ending[edge] = parseInt(me.options.offset) + 'px';
 
