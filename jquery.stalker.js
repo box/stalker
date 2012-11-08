@@ -238,11 +238,13 @@
 			if (me.stalking)
 			{
 				me._baseWidth = me.placeholder.width();
-				me.jElement.width(me._baseWidth);
+				me._baseOffset = me.placeholder.offset();
+				me.jElement.width(me._baseWidth).css('left', me._baseOffset.left+'px');
 			}
 			else
 			{
 				me._baseWidth = me.jElement.width();
+				me._baseOffset = me.placeholder.offset();
 			}
 			stalk();
 		}
