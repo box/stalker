@@ -244,7 +244,7 @@
 			else
 			{
 				me._baseWidth = me.jElement.width();
-				me._baseOffset = me.placeholder.offset();
+				me._baseOffset = me.jElement.offset();
 			}
 			stalk();
 		}
