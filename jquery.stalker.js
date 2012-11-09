@@ -109,7 +109,7 @@
 		{
 			me.stalking = true;
 
-			var initial = {position: 'fixed', left: me._baseOffset.left + 'px'}, ending = $.extend({}, initial);
+			var initial = {position: 'fixed'}, ending = $.extend({}, initial);
 			initial[edge] = -(me.jElement.outerHeight()) + 'px';
 			ending[edge] = parseInt(me.options.offset) + 'px';
 
@@ -117,7 +117,7 @@
 			{
 				// give the element custom style while stalking; by default,
 				//  force the element to have its original width and appear on top
-				var basicStalkerCSS = {width: me._baseWidth + 'px', 'z-index': stalkerZIndex};
+				var basicStalkerCSS = {width: me._baseWidth + 'px', left: me._baseOffset.left + 'px', 'z-index': stalkerZIndex};
 				if (typeof me.options.stalkerStyle == 'object')
 				{
 					me.jElement.css($.extend(basicStalkerCSS, me.options.stalkerStyle));
