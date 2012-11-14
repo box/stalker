@@ -117,7 +117,7 @@
 			{
 				// give the element custom style while stalking; by default,
 				//  force the element to have its original width and appear on top
-				var basicStalkerCSS = {width: me._baseWidth + 'px', 'z-index': stalkerZIndex};
+				var basicStalkerCSS = {width: me._baseWidth + 'px', left: me._baseOffset.left + 'px', 'z-index': stalkerZIndex};
 				if (typeof me.options.stalkerStyle == 'object')
 				{
 					me.jElement.css($.extend(basicStalkerCSS, me.options.stalkerStyle));
@@ -246,11 +246,13 @@
 					me._baseWidth = me.placeholder.width();
 				}
 
-				me.jElement.width(me._baseWidth);
+				me._baseOffset = me.placeholder.offset();
+				me.jElement.width(me._baseWidth).css('left', me._baseOffset.left+'px');
 			}
 			else
 			{
 				me._baseWidth = me.jElement.width();
+				me._baseOffset = me.jElement.offset();
 			}
 			stalk();
 		}
