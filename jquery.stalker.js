@@ -237,7 +237,15 @@
 			// since resize gets called when window zooms, re-cache element width
 			if (me.stalking)
 			{
-				me._baseWidth = me.placeholder.width();
+				if (me.options.stalkerStyle && me.options.stalkerStyle.width)
+				{
+					me._baseWidth = me.options.stalkerStyle.width;
+				}
+				else
+				{
+					me._baseWidth = me.placeholder.width();
+				}
+
 				me.jElement.width(me._baseWidth);
 			}
 			else
