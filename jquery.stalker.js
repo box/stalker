@@ -96,7 +96,10 @@
 		// we need a placeholder to keep the document from reflowing
 		// use a clone to keep styles (esp. those related to width) but remove
 		//  children to reduce id conflicts
-		this.placeholder = this.jElement.clone(false).empty().css('height', this.jElement.outerHeight());
+
+		// We use jElement.height() instead of outerHeight() since original
+		// padding is still applied to placeholder element
+		this.placeholder = this.jElement.clone(false).empty().css('height', this.jElement.height());
 
 		this.stalking = false;
 
