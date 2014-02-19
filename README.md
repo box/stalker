@@ -32,3 +32,20 @@ A callback to be executed when the element begins following the user.  The funct
 
 **stopCallback** (function - default: none):
 A callback to be executed as soon as the element stops following the user and returns to its original position.  The function context will be the DOM element which is no longer following.
+
+
+## Copyright and License
+
+Copyright 2014 Box, Inc. All rights reserved.
+
+Licensed under the Apache License, Version 2.0 (the "License");
+you may not use this file except in compliance with the License.
+You may obtain a copy of the License at
+
+   http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
