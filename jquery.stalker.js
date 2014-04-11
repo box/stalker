@@ -99,7 +99,7 @@
 
 		// We use jElement.height() instead of outerHeight() since original
 		// padding is still applied to placeholder element
-		this.placeholder = this.jElement.clone(false).empty().css('height', this.jElement.height());
+		this.placeholder = this.styleClone(this.jElement).css('height', this.jElement.height());
 
 		this.stalking = false;
 
@@ -192,7 +192,7 @@
 						//  element's original styles intact for when we're done stalking
 						//  We want to do this as late as possible.
 						// We won't need the descendents, so don't bother with them
-						me._jElementClone = me.jElement.clone(true, false);
+						me._jElementClone = me.styleClone(me.jElement);
 
 						setPosition('top');
 
@@ -217,7 +217,7 @@
 						//  element's original styles intact for when we're done stalking
 						//  We want to do this as late as possible.
 						// We won't need the descendents, so don't bother with them
-						me._jElementClone = me.jElement.clone(true, false);
+						me._jElementClone = me.styleClone(me.jElement);
 
 						setPosition('bottom');
 
@@ -250,7 +250,7 @@
 				}
 
 				me._baseOffset = me.placeholder.offset();
-				me.jElement.width(me._baseWidth).css('left', me._baseOffset.left+'px');
+				me.jElement.width(me._baseWidth).css('left', me._baseOffset.left + 'px');
 			}
 			else
 			{
@@ -264,6 +264,32 @@
 		$(window).on('scroll.stalker', handleEvent).on('resize.stalker', handleEvent);
 
 		stalk();
+	};
+
+	Stalker.prototype.styleClone = function($node)
+	{
+		// Extract the node from the jQuery object for cloning.
+		var node = 'nodeName' in $node ? $node : $node[0];
+		var clone = document.createElement(node.nodeName);
+
+		var i, length, attr;
+		for (i = 0, length = node.attributes.length; i < length; i++)
+		{
+			attr = node.attributes[i];
+			clone.setAttribute(attr.name || attr.nodeName, attr.value || attr.nodeValue);
+		}
+
+		// Clean and re-merge attributes.
+		if (clone.clearAttributes)
+		{
+			clone.clearAttributes();
+		}
+		if (clone.mergeAttributes)
+		{
+			clone.mergeAttributes(node);
+		}
+
+		return $(clone);
 	};
 
 	// A really lightweight plugin wrapper around the constructor,
