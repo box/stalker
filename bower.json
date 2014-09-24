@@ -1,0 +1,24 @@
+{
+  "name": "stalker",
+  "version": "1.0.0",
+  "homepage": "https://github.com/box/stalker",
+  "authors": [
+    "Matt Willer <mwiller@box.com>"
+  ],
+  "description": "A jQuery plugin allowing elements to follow the user as they scroll a page",
+  "main": "jquery.stalker.js",
+  "moduleType": [
+    "globals"
+  ],
+  "license": "Apache-2.0",
+  "dependencies": {
+    "jquery": ">=1.8.3"
+  }
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
