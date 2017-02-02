@@ -1,0 +1,23 @@
+{
+  "name": "jquery-stalker",
+  "version": "0.0.1",
+  "description": "A jQuery plugin allowing elements to follow the user as they scroll a page",
+  "main": "jquery.stalker.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/box/stalker.git"
+  },
+  "keywords": [
+    "jquery",
+    "scroll"
+  ],
+  "author": "Box <oss@box.com>",
+  "license": "Apache-2.0",
+  "bugs": {
+    "url": "https://github.com/box/stalker/issues"
+  },
+  "homepage": "https://github.com/box/stalker#readme"
+}
