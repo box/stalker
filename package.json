@@ -1,6 +1,6 @@
 {
   "name": "jquery-stalker",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "description": "A jQuery plugin allowing elements to follow the user as they scroll a page",
   "main": "jquery.stalker.js",
   "scripts": {
